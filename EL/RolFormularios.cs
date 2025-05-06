@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 
 namespace EL
 {
-    [Table("Roles")]
-    public class Roles
+    [Table("RolFormularios")]
+
+    public class RolFormularios
     {
         [Key]
-        public short IdRol { get; set; }
+        public short IdRolFormulario { get; set; }
 
-        [MaxLength(50), Required]
-        public string Rol { get; set; }
+        [Required]
+        public int IdRol { get; set; }
+
+        [Required]
+        public int IdFormulario { get; set; }
         [Required]
         public bool Activo { get; set; }
         [Required]
@@ -27,9 +29,9 @@ namespace EL
         public int? IdUsuarioActualiza { get; set; }
         public DateTime? FechaActualizacion { get; set; }
 
-        public Roles()
+        public RolFormularios()
         {
-            Rol = string.Empty;
+
         }
 
     }

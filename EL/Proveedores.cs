@@ -8,36 +8,29 @@ using System.Threading.Tasks;
 
 namespace EL
 {
+    [Table("Proveedores")]
 
-    [Table("Usuarios")]
-
-    public class Usuarios
+    public class Proveedores
     {
+
         [Key]
-        public short IdUsuario { get; set; }
+        public int IdProveedor { get; set; }
 
         [MaxLength(200), Required]
-        public string NombreCompleto { get; set; }
+        public string NombreProveedor { get; set; }
+
+        [MaxLength(10), Required]
+        public string Numero { get; set; }
 
         [MaxLength(200), Required]
         public string Correo { get; set; }
 
-        [MaxLength(50), Required]
-        public string UserName { get; set; }
+        [MaxLength(200), Required]
+        public string Direccion { get; set; }
 
-        [Required]
-
-        public byte[] Password { get; set; }
-        [Required]
-
-        public bool Bloqueado { get; set; }
-        [Required]
-
-        public byte IntentosFallidos { get; set; }
-
-        public short? IdRol { get; set; }
         [Required]
         public bool Activo { get; set; }
+
         [Required]
         public int IdUsuarioRegistra { get; set; }
         [Required]
@@ -45,12 +38,12 @@ namespace EL
         public int? IdUsuarioActualiza { get; set; }
         public DateTime? FechaActualizacion { get; set; }
 
-        public Usuarios()
+        public Proveedores()
         {
-            NombreCompleto = string.Empty;
-            Correo = string.Empty;
-            UserName= string.Empty;
-            Password = UTF8Encoding.UTF8.GetBytes(string.Empty);
+            NombreProveedor= string.Empty;
+            Numero= string.Empty;
+            Correo= string.Empty;
+            Direccion = string.Empty;
 
         }
 
